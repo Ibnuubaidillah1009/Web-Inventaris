@@ -1,58 +1,106 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Web-Inventaris
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A comprehensive web-based inventory management system designed to efficiently track and manage various types of assets, consumables, and related operations within an organization. This system provides robust API endpoints for seamless integration with frontend applications.
 
-## About Laravel
+## Fitur Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+*   **Manajemen Aset Tetap:** Pencatatan, pembaruan, dan pelacakan aset tetap.
+*   **Manajemen Barang Habis Pakai (Consumable):** Pengelolaan stok, pencatatan masuk dan keluar barang.
+*   **Peminjaman Aset:** Sistem untuk meminjamkan dan mengembalikan aset.
+*   **Mutasi Aset:** Pelacakan perubahan lokasi atau status aset.
+*   **Pemusnahan Aset:** Pencatatan proses pemusnahan aset.
+*   **Stock Opname:** Fitur untuk melakukan audit dan verifikasi stok barang.
+*   **Manajemen Supplier:** Pencatatan dan pengelolaan data pemasok.
+*   **Manajemen Lokasi:** Organisasi aset berdasarkan lokasi fisik (gedung, ruangan).
+*   **Autentikasi API:** Sistem login berbasis token menggunakan Laravel Sanctum.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Teknologi yang Digunakan
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+*   **Backend:** PHP 8+
+    *   **Framework:** Laravel
+    *   **Database:** MySQL (direkomendasikan)
+    *   **Autentikasi API:** Laravel Sanctum
+*   **Frontend Tools:**
+    *   **Package Manager:** npm
+    *   **Bundler:** Vite
+    *   **CSS:** Tailwind CSS (kemungkinan, berdasarkan `resources/css/app.css` dan modern Laravel setup)
+    *   **JavaScript:** Vanilla JS atau framework modern (Vue/React, jika terpisah)
 
-## Learning Laravel
+## Instalasi
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Ikuti langkah-langkah berikut untuk menginstal dan menjalankan proyek secara lokal:
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1.  **Clone Repository:**
+    ```bash
+    git clone [URL_REPO_ANDA]
+    cd Web-Inventaris
+    ```
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+2.  **Instal Dependensi Backend:**
+    ```bash
+    composer install
+    ```
 
-## Agentic Development
+3.  **Konfigurasi Environment:**
+    *   Salin file `.env.example` ke `.env`:
+        ```bash
+        cp .env.example .env
+        ```
+    *   Edit file `.env` dan sesuaikan koneksi database (`DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`), serta konfigurasi lainnya.
+    *   Generate application key:
+        ```bash
+        php artisan key:generate
+        ```
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+4.  **Migrasi Database dan Seeder (Opsional):**
+    *   Jalankan migrasi database untuk membuat tabel:
+        ```bash
+        php artisan migrate
+        ```
+    *   Jika ada data awal yang ingin dimasukkan, jalankan seeder:
+        ```bash
+        php artisan db:seed
+        ```
 
-```bash
-composer require laravel/boost --dev
+5.  **Instal Dependensi Frontend:**
+    ```bash
+    npm install
+    ```
 
-php artisan boost:install
-```
+6.  **Jalankan Vite (untuk pengembangan):**
+    *   Untuk mengkompilasi aset frontend dan menjalankannya di development server:
+        ```bash
+        npm run dev
+        ```
+    *   Untuk membangun aset frontend untuk produksi:
+        ```bash
+        npm run build
+        ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+7.  **Jalankan Server Backend:**
+    ```bash
+    php artisan serve
+    ```
 
-## Contributing
+Aplikasi backend akan berjalan di `http://127.0.0.1:8000` secara default. Frontend dapat diakses melalui URL yang disediakan oleh Vite atau jika Anda memiliki aplikasi frontend terpisah.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Penggunaan API
 
-## Code of Conduct
+Semua endpoint API didefinisikan dalam file `routes/api.php`. Anda bisa menggunakan Postman, Insomnia, atau klien HTTP lainnya untuk berinteraksi dengan API ini.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Contoh Alur:
+1.  **Registrasi/Login User:** Gunakan endpoint `/api/register` atau `/api/login` untuk mendapatkan token autentikasi (Sanctum).
+2.  **Akses Endpoint Terlindungi:** Sertakan token autentikasi di header permintaan sebagai `Authorization: Bearer <your_token>`.
 
-## Security Vulnerabilities
+## Struktur Proyek
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+*   `app/Http/Controllers/Api`: Berisi kontroler untuk API, diorganisir berdasarkan modul (Asset, Borrowing, Consumable, dll).
+*   `app/Http/Requests`: Validasi permintaan HTTP.
+*   `app/Http/Resources`: Transformasi model menjadi format JSON yang optimal untuk API.
+*   `app/Models`: Definisi model Eloquent untuk representasi data database.
+*   `database/migrations`: Skema database.
+*   `routes/api.php`: Definisi endpoint API.
+*   `resources/js`, `resources/css`: File sumber frontend.
+*   `public`: Direktori aset yang dapat diakses publik.
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
