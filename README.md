@@ -57,27 +57,12 @@ Ikuti langkah-langkah berikut untuk menginstal dan menjalankan proyek secara lok
         php artisan db:seed
         ```
 
-5.  **Instal Dependensi Frontend:**
-    ```bash
-    npm install
-    ```
-
-6.  **Jalankan Vite (untuk pengembangan):**
-    *   Untuk mengkompilasi aset frontend dan menjalankannya di development server:
-        ```bash
-        npm run dev
-        ```
-    *   Untuk membangun aset frontend untuk produksi:
-        ```bash
-        npm run build
-        ```
-
-7.  **Jalankan Server Backend:**
+5.  **Jalankan Server Backend:**
     ```bash
     php artisan serve
     ```
 
-Aplikasi backend akan berjalan di `http://127.0.0.1:8000` secara default. Frontend dapat diakses melalui URL yang disediakan oleh Vite atau jika Anda memiliki aplikasi frontend terpisah.
+Aplikasi backend akan berjalan di `http://127.0.0.1:8000` secara default.
 
 ## Penggunaan API
 
@@ -99,3 +84,4 @@ Contoh Alur:
 *   `public`: Direktori aset yang dapat diakses publik.
 
 ---
+
