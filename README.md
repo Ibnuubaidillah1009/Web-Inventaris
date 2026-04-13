@@ -18,13 +18,8 @@ A comprehensive web-based inventory management system designed to efficiently tr
 
 *   **Backend:** PHP 8+
     *   **Framework:** Laravel
-    *   **Database:** MySQL (direkomendasikan)
+    *   **Database:** MySQL
     *   **Autentikasi API:** Laravel Sanctum
-*   **Frontend Tools:**
-    *   **Package Manager:** npm
-    *   **Bundler:** Vite
-    *   **CSS:** Tailwind CSS (kemungkinan, berdasarkan `resources/css/app.css` dan modern Laravel setup)
-    *   **JavaScript:** Vanilla JS atau framework modern (Vue/React, jika terpisah)
 
 ## Instalasi
 
@@ -32,7 +27,7 @@ Ikuti langkah-langkah berikut untuk menginstal dan menjalankan proyek secara lok
 
 1.  **Clone Repository:**
     ```bash
-    git clone [URL_REPO_ANDA]
+    git clone https://github.com/Ibnuubaidillah1009/Web-Inventaris
     cd Web-Inventaris
     ```
 
